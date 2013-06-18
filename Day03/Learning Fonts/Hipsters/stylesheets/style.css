@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Condiment|Trade+Winds);
+
+p {
+	font-family: "Open Sans";
+}
+
+h1 {
+	font-family: "Trade Winds";
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: "Trade Winds";
+}
+
+p.by {
+	font-family: "Condiment";
+	font-style: italic;
+}
+
+a {
+	font-size: 10px;
+
+}
+
+a:hover {
+	color: red;
+}

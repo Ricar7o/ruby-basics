@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+/*This imports the Open Sans font from Google and lets me use it on this site*/
+
+/*------------------ Style for the whole page in general ---------------*/
+body {	background-color: lightgray;	}
+
+* {	font-family: "Open Sans";	}
+
+.wrapper {
+	width: 1213px;
+	margin: auto; /*Makes sure the content stays centered in the browser*/
+	display: block;
+}
+
+/*---------------- Style for the navigation bar --------------------*/
+
+img {
+	width: 60%;
+	height: 120px;
+	border-radius: 100%;
+	display: block; /*This makes sure the img is displayed as a block. Otherwise it won't align to the center*/
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+nav {
+	width: 200px;
+	background-color: white;
+	/*border: 1px solid gray;*/
+	box-shadow: 1px 1px 5px #888888; /*This gives it a dropped shadow. Vertical, Horizontal, Blur and Color*/
+	border-radius: 3px;
+	float: left;
+	margin: 0px 10px 10px 0px;
+}
+
+div.navitem {
+	height: 40px;
+	text-align: center;
+	line-height: 40px; /*This helps align text vertically within the div*/
+	/*transition: 0.1;*/
+}
+
+div.navitem:hover{	background-color: lightgray; }
+
+a {	text-decoration: none; } /*All the styles for the links and makes sure nothing changes*/
+a:link {	color:black;	}
+a:visited {	color:black;	}
+a:hover {	color: black;	}
+a:active {	color: black;	}
+
+/*-------------------- Style for the main section of the page ---------*/
+
+.content {
+	background-color: white;
+	border-radius: 3px; /*This gives it rounded corners*/
+	box-shadow: 1px 1px 5px #888888;
+	padding: 5px 20px 10px 20px; /*Padding, margin, border, all count for extra width*/
+	width: 700px;
+	margin: 0px 10px 10px 0px;
+	float: left; /*Float everything to the left and the wrapper makes sure it's not squished*/
+}
+
+h1 {	font-weight: bold;	}
+
+article > p { /*This targets paragraphs inside the article tag*/
+	font-size: 0.9em;
+}
+
+main > p { /*This targets only paragraphs inside the main tag*/
+	font-size: 0.9em;
+}
+
+#subject {
+	width: 250px;
+	border: 1px solid rgb(211,211,211); /*Give the borders of the fields a gray look*/
+}
+
+#email {
+	width: 250px;
+	border: 1px solid rgb(211,211,211);
+}
+
+td.fields {
+	font-size: 0.8em;
+	text-align: right;
+}
+
+textarea {
+	margin: 0;
+	padding: 2;
+	border: 1 solid rgb(211,211,211);
+}
+
+.blogdate { /*This is used to give the post date a different look*/
+	font-size: 10px;
+	font-style: italic;
+	color:gray;
+	margin-bottom: 20px;
+	border-bottom: 1px solid lightgray;
+}
+
+/*------------------------ Style for the Twitter feed ------------------*/
+
+div.twitter-widget {
+	width: 250px;
+	float: left;
+	box-shadow: 1px 1px 5px #888888;
+}

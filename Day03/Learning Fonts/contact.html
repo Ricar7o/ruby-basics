@@ -1,0 +1,40 @@
+<head>
+	<title>Contact Me</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+<div class="wrapper"> <!-- This div is used to control the page's width -->
+	<nav> <!-- The nav tag has all items of the navigation bar. This is using standard HTML5 tags to do that -->
+		<img src="images/RCA.jpg"/>
+		<a href="blog.html"><div class="navitem">Blog</div></a>
+		<a href="aboutme.html"><div class="navitem">About Me</div></a>
+		<a href="portfolio.html"><div class="navitem">Portfolio</div></a>
+		<a href="quotations.html"><div class="navitem">Quotations</div></a>
+		<a href="online.html"><div class="navitem">@RicardoOnline</div></a>
+		<a href="contact.html"><div class="navitem">Say Hello!</div></a>
+	</nav>
+	<main class="content"> <!-- All the content in the middle section is inside the Main tag to tell search engines that that is the main portion of the webpage -->
+		<h1>Contact me</h1>
+		<form> <!-- Creating a form so that people can e-mail me wihtout giving out my address -->
+			<table>
+				<tr>
+					<td class="fields">*E-mail:</td>
+					<td><input id="email" type="email" placeholder="Your e-mail" required autofocus alt="email"></td> <!-- Placeholder puts text inside the field that goes away when the user starts typing -->
+				</tr>
+				<tr>
+					<td class="fields">*Subject:</td>
+					<td><input id="subject" type="text" placeholder="Subject" required alt="subject"></td>
+				</tr>
+				<tr>
+					<td class="fields">*Message:</td>
+					<td><textarea id="message" cols="80%" rows="5" placeholder="Your message here" required></textarea></td> <!-- Textarea allows users to write multiple lines and resize if they want to -->
+				</tr>
+			</table>
+		</form>
+	</main>
+	<div class="twitter-widget"> <!-- This is the code for the Twitter feed. Copied and pasted directly form Twitter.com -->
+		<a class="twitter-timeline" href="https://twitter.com/Ricar7o" data-widget-id="344482003682467842">Tweets by @Ricar7o</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+</div>
+</body>
