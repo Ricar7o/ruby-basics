@@ -1,3 +1,34 @@
+class MKSStudent
+	attr_accessor :name, :drinks
+
+	def initialize(name)
+		@name = name.to_s
+		@drinks = 0
+	end
+
+	def write_code_for(purpose)
+		"#{@name} is writing code for #{purpose.to_s}."
+	end
+
+	def drink(type, temp)
+		@drinks += 1
+		puts "#{@name} is drinking #{temp.to_s + ' ' + type.to_s}."
+		if bathroom_break
+			@drinks = 0
+			puts "You should take a bathroom break."
+		end
+	end
+
+	def bathroom_break
+		if @drinks >= 3
+			true
+		else
+			false
+		end
+	end
+
+end
+
 class Roommate
 	# class level
 
