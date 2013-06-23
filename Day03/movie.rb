@@ -43,7 +43,7 @@ def is_movie_available_4(time)
     }
     movies = {}
     movie_timings.each_pair do |flix, times|
-      times.keep_if {|t| time < t}
+      times.keep_if {|t| time <= t}
       movies[flix] = times
     end
 

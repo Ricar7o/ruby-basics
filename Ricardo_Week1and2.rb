@@ -450,7 +450,7 @@ def is_movie_available_4(time)
     }
     movies = {}
     movie_timings.each_pair do |flix, times|
-      times.keep_if {|t| time < t}
+      times.keep_if {|t| time <= t}
       movies[flix] = times
     end
 
@@ -476,12 +476,55 @@ def calculator(operator, *numbers)
 end
 # -----------------------------------------------------------
 
-# Exercise 37-39 Missing
+# Exercise 37 - Log in
+def log_in
+    password_saved = "password"
+    # TODO:
+    # 1) Ask User for password
+    # 2) Get an input from the user for password
+    # 3) while the user's input is incorrect, print an error message and ask for it again
+  puts "Welcome. Please enter your password:"
+  while gets.chomp != password_saved
+    puts "Incorrect password. Please try again:"
+  end
+  "Successful login"
+end
 # -----------------------------------------------------------
+
+# Exercise 38 - Sign up
+def sign_up
+    puts "What's your username"
+    username = gets.chomp
+    puts "What's your password"
+    password = gets.chomp
+    # TODO: until the password is greater than 8 characters, ask the user
+    # to input another password
+    until password.length > 8
+      puts "Please make sure your password is more than 8 characters long. Try again:"
+      password = gets.chomp
+    end
+    "Password saved"
+end
 # -----------------------------------------------------------
-# -----------------------------------------------------------
-# -----------------------------------------------------------
-# -----------------------------------------------------------
+
+# Exercise 39 - Password confirmation
+def sign_up_2
+    puts "What's your username"
+    username = gets.chomp
+    puts "What's your password"
+    password = gets.chomp
+    puts "Confirm the password"
+    password_confirmation = gets.chomp
+    # TODO: until the password is greater than 8 characters and the password
+    # matches with the password_confirmation, ask the user to re-input values
+    until password.length > 8 && password == password_confirmation
+      puts "Please choose a password that's greater than 8 characters long:"
+      password = gets.chomp
+      puts "Confirm your password:"
+      password_confirmation = gets.chomp
+  end
+  "Password saved."
+end
 # -----------------------------------------------------------
 
 # Exercise 40 - Guess 1
@@ -511,7 +554,7 @@ def guess_number_2
 end
 # -----------------------------------------------------------
 
-# Exercise 42 - Guess 3
+# Exercise 42_1 - Guess 3
 def guess_number_3
   tries = 1
   random_number = rand(10) # rand gives a random number between 0 and x-1
@@ -527,7 +570,7 @@ def guess_number_3
 end
 # -----------------------------------------------------------
 
-# Exercise 42 - Guess 4
+# Exercise 42_2 - Guess 4
 def guess_number_4
   tries = 1
   random_number = rand(10) # rand gives a random number between 0 and x-1
@@ -547,6 +590,116 @@ def guess_number_4
   puts "You guessed correctly! The random number is #{random_number}."
   puts "It took you #{tries} tries to guess the number correctly."
 end
+# -----------------------------------------------------------
+
+# Exercise 43 - Warmer or Colder
+def guess_number_5
+    random_number = rand(100) # rand gives random number between 0 and x-1
+    puts "Guess a number from 0-99"
+    # TODO: Same as guess_number_3 but tell the user whether they are getting warmer or colder
+    # (For the first guess you don't tell them warmer or coler)
+    # HINT: use the "abs" method for absolute value. Example -5.abs returns 5
+    answer = gets.chomp.to_i
+    distance = (random_number - answer).abs
+    if answer == random_number
+      puts "Amazing! First try and you got it!"
+    else
+      puts "Nope. Keep trying:"
+      until answer == random_number
+        distance = (random_number - answer).abs
+        answer = gets.chomp.to_i
+        if distance > (random_number - answer).abs
+          if answer == random_number
+            break
+          else
+            puts "Warmer. Try again:#{random_number}"
+          end
+        else
+          puts "Colder. Try again:#{random_number}"
+        end
+    end
+    "Got it!"
+  end
+end
+# -----------------------------------------------------------
+
+# Exercise 44 - Not an exercise
+# -----------------------------------------------------------
+
+# Exercise 45 - Countdown
+def countdown(count)
+    # print out numbers from count to 0
+    puts count
+    puts count -= 1 until count == 0
+end
+# -----------------------------------------------------------
+
+# Exercise 46 - Countup
+def countup(count)
+    # opposite of countdown
+    counter = -1
+    puts counter until (counter += 1) == count
+    puts count
+end
+# -----------------------------------------------------------
+
+# Exercise 47 - Divisibility by 3
+def fizz(count)
+    # During countdown, multiples of 3 are replaced with fizz
+    while count != 0
+      if count % 3 == 0
+        puts "fizz"
+        count -= 1
+      else
+        puts count
+        count -= 1
+      end
+    end
+    puts "0"
+end
+# -----------------------------------------------------------
+
+# Exercise 48-53 - Chimpanzees
+class Chimpanzee
+  
+  attr_accessor :bananas, :is_clean
+
+  def initialize
+    @bananas = 0
+    @is_clean = true
+  end
+
+  def how_many_bananas?
+    @bananas
+  end
+
+  def yell
+    puts "Ooh ooh ooh"
+  end
+
+  def eat
+    puts "Yumm"
+    puts "Relieved..."
+    @is_clean = false
+    @bananas += 1
+  end
+
+  def groom
+    if @is_clean
+      "Nothing to do"
+    else
+      puts "Taking a shower."
+      @is_clean = true
+    end
+  end
+
+end
+# -----------------------------------------------------------
+
+# Exercise 44 - Not an exercise
+# -----------------------------------------------------------
+
+# Exercise 44 - Not an exercise
 # -----------------------------------------------------------
 
 # Exercise 43-55 Missing
