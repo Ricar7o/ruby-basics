@@ -3,19 +3,24 @@ class BankAccount
 	@@interest_rate = 0.06
 	@@total_loans_out = 0.0
 	@@total_money_in_accounts = 0.0
+	@@pending_transactions = []
 
 	def self.get_total_loans_out
 		@@total_loans_out
 	end
 
-	def self.transfer_money(from, to, amount)
-		raise ArgumentError, "Please provide a positive number." unless amount.to_f > 0
-		unless from.get_balance >= amount.to_f
-			puts "Not enough funds in #{from.name}'s' account to transfer $#{amount.to_f}"
-		else #For unless conditionals, the else method is the one executed if the condition is true
-			from.withdraw_money(amount)
-			to.deposit_money(amount)
-		end
+	# def self.transfer_money(from, to, amount)
+	# 	raise ArgumentError, "Please provide a positive number." unless amount.to_f > 0
+	# 	unless from.get_balance >= amount.to_f
+	# 		puts "Not enough funds in #{from.name}'s' account to transfer $#{amount.to_f}"
+	# 	else #For unless conditionals, the else method is the one executed if the condition is true
+	# 		from.withdraw_money(amount)
+	# 		to.deposit_money(amount)
+	# 	end
+	# end
+
+	def self.transfer_money(transaction)
+		@@pending_transactions << transaction
 	end
 
 	def total_cash_on_hand
@@ -89,6 +94,28 @@ class BankAccount
 		@loan *= (1 + @@interest_rate)
 		@loan
 	end
+
+end
+
+class Transaction
+	attr_accessor :from, :to, :amount, :status
+
+	def initialize(from, to, amount)
+		@from = from
+		@to = to
+		@amount = amount
+		@status = false # False for pending transactions, true for executed transactions
+	end
+
+	# def self.transfer_money(from, to, amount)
+	# 	raise ArgumentError, "Please provide a positive number." unless amount.to_f > 0
+	# 	unless from.get_balance >= amount.to_f
+	# 		puts "Not enough funds in #{from.name}'s' account to transfer $#{amount.to_f}"
+	# 	else #For unless conditionals, the else method is the one executed if the condition is true
+	# 		from.withdraw_money(amount)
+	# 		to.deposit_money(amount)
+	# 	end
+	# end
 
 end
 
